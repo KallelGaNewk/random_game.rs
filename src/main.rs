@@ -74,7 +74,7 @@ fn get_games() -> Vec<Game> {
 fn launch_app(appid: String) {
     let url = format!("steam://rungameid/{}", appid);
 
-    std::process::Command::new(r#"C:\Program Files (x86)\Steam\steam.exe"#)
+    std::process::Command::new(STEAM_BIN_PATH)
         .arg(url)
         .stdout(std::process::Stdio::null())
         .stderr(std::process::Stdio::null())
